@@ -1,18 +1,20 @@
-NAME = Megaphone
-CC = c++
-CFLAGS = -Wall -Werror -Wextra --std=c++98
-RM = rm -rf
+CC = c++ -std=c++98
+FLAG = -Wall -Wextra -Werror
+Name = megaphone
 SRC = megaphone.cpp
 
-all:	$(NAME)
+all: $(Name)
 
-$(NAME) :
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(Name): $(SRC)
+	@echo "Compiling..."
+	@$(CC) $(FLAG) $(SRC) -o $(Name)
 
 clean:
-	@$(RM) $(NAME)
+	@echo "Cleaning..."
+	@rm -rf $(Name)
 
 fclean: clean
-	@$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
