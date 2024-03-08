@@ -8,11 +8,6 @@ void bluh(){
 }
 
 int main(){
-	Zombie asdas;
-	asdas.setName("Sina");
-	asdas.announce();
-	bluh();
 	randomChump("bernaa");
-	randomChump("denemeee");
-	system("leaks BraiiiiiiinnnzzzZ");
+	bluh();
 }
