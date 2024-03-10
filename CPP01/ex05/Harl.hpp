@@ -2,7 +2,6 @@
 #define HARL_HPP
 
 #include <iostream>
-#include <map>
 class Harl{
     private :
         void debug(void);
