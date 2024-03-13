@@ -35,18 +35,18 @@ class Fixed{
         Fixed operator/(const Fixed& other);
 
         //increment operators
-        Fixed operator++(int); //neden int olarak alıyoruz
+        Fixed operator++(int);
         Fixed& operator++();
 
         //decrement operators
         Fixed operator--(int);
         Fixed& operator--();
 
-        //Min Max functions
-        static Fixed& Min(Fixed& num1, Fixed& num2);
-        static const Fixed& Min(const Fixed& num1, const Fixed& num2);
-        static Fixed& Max(Fixed& num1, Fixed& num2);
-        static const Fixed& Max(const Fixed& num1, const Fixed& num2);
+        //min max functions
+        static Fixed& min(Fixed& num1, Fixed& num2);
+        static const Fixed& min(const Fixed& num1, const Fixed& num2);
+        static Fixed& max(Fixed& num1, Fixed& num2);
+        static const Fixed& max(const Fixed& num1, const Fixed& num2);
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& num);

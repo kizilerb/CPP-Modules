@@ -48,11 +48,6 @@ void Fixed::setRawBits(int const raw){
     this->fixedNum = raw;
 }
 
-std::ostream& operator<<(std::ostream& out, const Fixed& num){
-    out << num.toFloat();
-    return out;
-}
-
 
 //comparing operators
 bool Fixed::operator<(const Fixed& other){
@@ -132,4 +127,25 @@ Fixed& Fixed::operator--(){
 }
 
 
-//Min Max functions
+//min max functions
+Fixed& Fixed::min(Fixed& num1, Fixed& num2){
+    return (num1.fixedNum < num2.fixedNum ? num1 : num2);
+}
+
+const Fixed& Fixed::min(const Fixed& num1, const Fixed& num2){
+    return (num1.fixedNum < num2.fixedNum ? num1 : num2);
+}
+
+Fixed& Fixed::max(Fixed& num1, Fixed& num2){
+    return (num1.fixedNum < num2.fixedNum ? num2 : num1);
+}
+
+const Fixed& Fixed::max(const Fixed& num1, const Fixed& num2){
+    return (num1.fixedNum < num2.fixedNum ? num2 : num1);
+}
+
+
+std::ostream& operator<<(std::ostream& out, const Fixed& num){
+    out << num.toFloat();
+    return out;
+}
