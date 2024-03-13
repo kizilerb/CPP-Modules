@@ -11,8 +11,8 @@ class HumanB {
 		string name;
 	public :
 		void attack();
-		HumanB(string name);
-		void setWeapon(Weapon *WepB);
+		HumanB(string human);
+		void setWeapon(Weapon &Weapon);
 };
 
 #endif

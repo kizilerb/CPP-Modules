@@ -12,7 +12,7 @@ class Weapon{
 		string type;
 	public :
 		Weapon(string type);
-		const string& getType();
+		const string& getType() const;
 		void setType(string type);
 };
 

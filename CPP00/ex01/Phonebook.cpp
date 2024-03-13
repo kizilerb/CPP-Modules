@@ -82,7 +82,7 @@ void Phonebook::SEARCH(){
 	{
 		for ( unsigned long i = 0; i < str.size(); i++)
 		{
-			if (std::isalpha(str[i])) // sorun olabilir.
+			if (std::isalpha(str[i]) || str[i]== 32 ) // sorun olabilir.
 			{
 				std::cout << "Invalid input. Index must contain only numbers." << std::endl;
 				return ;
@@ -99,7 +99,7 @@ void Phonebook::SEARCH(){
 			std::cout << "Index " << i + 1 << " is not filled yet." << std::endl;
 			return ;
 		}
-		
+
 		std::cout << "First Name : " << ContactList[i].GetContact("FirstName") << std::endl;
 		std::cout << "Last Name : " << ContactList[i].GetContact("LastName") << std::endl;
 		std::cout << "Phone Number : " << ContactList[i].GetContact("PhoneNumber") << std::endl;

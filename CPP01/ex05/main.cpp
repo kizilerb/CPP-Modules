@@ -1,6 +1,6 @@
 #include "Harl.hpp"
 
 int main(){
-    Harl human;
-    human.complain("DEBUG");
+	Harl human;
+	human.complain("DEBUG");
 }

@@ -12,7 +12,7 @@ class Zombie{
 		string name;
 	public:
 		void setName(string name);
-		string getName(void);
+		string getName(void) const;
 		void announce(void);
 		~Zombie();
 };

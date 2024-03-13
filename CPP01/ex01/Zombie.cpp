@@ -4,7 +4,7 @@ void Zombie::setName(string name){
 	this->name = name;
 }
 
-string Zombie::getName(){
+string Zombie::getName() const{
 	return this->name;
 }
 

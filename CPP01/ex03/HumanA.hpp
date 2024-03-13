@@ -6,10 +6,10 @@
 
 class HumanA{
 	private :
-		Weapon* WepA;
+		Weapon &WepA;
 		string name;
 	public :
-		HumanA(string name, Weapon* WepA);
+		HumanA(string human, Weapon& Weapon);
 		void attack();
 };
 
