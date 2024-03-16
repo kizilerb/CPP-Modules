@@ -16,7 +16,7 @@ Fixed::Fixed(const float num){
 }
 
 float Fixed::toFloat( void ) const{
-    return (float)this->fixedNum / pow(2,fracBits); 
+    return static_cast<float>(this->fixedNum / pow(2,fracBits));
 }
 
 int Fixed::toInt( void ) const{
@@ -77,27 +77,19 @@ bool Fixed::operator!=(const Fixed& other){
 
 //arithmetic operators
 Fixed Fixed::operator+(const Fixed& other){
-    Fixed ret;
-    ret.fixedNum = this->fixedNum + other.fixedNum;
-    return ret;
+    return (this->toFloat() + other.toFloat());
 }
 
 Fixed Fixed::operator-(const Fixed& other){
-    Fixed ret;
-    ret.fixedNum = this->fixedNum - other.fixedNum;
-    return ret;
+    return (this->toFloat() - other.toFloat());
 }
 
 Fixed Fixed::operator*(const Fixed& other){
-    Fixed ret;
-    ret.fixedNum = this->fixedNum * other.fixedNum;
-    return ret;
+    return (this->toFloat() * other.toFloat());
 }
 
 Fixed Fixed::operator/(const Fixed& other){
-    Fixed ret;
-    ret.fixedNum = this->fixedNum / other.fixedNum;
-    return ret;
+    return (this->toFloat() / other.toFloat());
 }
 
 
