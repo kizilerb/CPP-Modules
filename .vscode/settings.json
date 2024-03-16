@@ -66,6 +66,11 @@
 		"__verbose_abort": "cpp",
 		"charconv": "cpp",
 		"clocale": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"__functional_03": "cpp",
+		"deque": "cpp",
+		"memory_resource": "cpp",
+		"filesystem": "cpp",
+		"stack": "cpp"
 	}
 }
