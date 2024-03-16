@@ -4,11 +4,13 @@
 #include "Animal.hpp"
 
 class Cat: public Animal{
-     public:
+    private:
+        Brain *catBrain;
+    public:
         Cat();
         ~Cat();
         Cat(const Cat& copy);
-        Cat& operator=(const Cat& other);
+        Cat& operator=(const Cat& copy);
         
         std::string getType() const;
         void makeSound() const;
