@@ -1,7 +1,7 @@
 CC = c++ -std=c++98
 FLAG = -Wall -Wextra -Werror 
-Name = Brain
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+Name = Abstract
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp Abstract.cpp
 
 all: $(Name)
 
