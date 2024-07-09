@@ -71,6 +71,7 @@
 		"deque": "cpp",
 		"memory_resource": "cpp",
 		"filesystem": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"execution": "cpp"
 	}
 }
