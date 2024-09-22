@@ -22,7 +22,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy): name(copy.name), grade(copy.grad
 }
 
 Bureaucrat::~Bureaucrat(){
-    std::cout << "Dectructor is called." << std::endl;
+    std::cout << "Bureaucrat Dectructor is called." << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy){

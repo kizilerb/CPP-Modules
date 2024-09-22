@@ -2,6 +2,9 @@
 #define FORM_HPP
 
 #include "Bureaucrat.hpp"
+#include <iostream>
+
+class Bureaucrat;
 
 class Form {
     private:
@@ -14,15 +17,15 @@ class Form {
 		Form();
 		Form(std::string namein, int signGradein, int execGradein);
 		Form(const Form& copy);
-		Form& operator=(const Form& copy);
+		Form& operator=(Form const& copy);
 		~Form();
 
-		std::string getName();
-		bool getSignedForm();
-		int getSignedGrade();
-		int getexecGrade();
+		std::string getName() const;
+		bool getSignedForm() const;
+		int getSignedGrade() const;
+		int getExecGrade() const;
 		void setSignedGrade(int signGradein);
-		void setExecGrade(int execGradein);
+		int setExecGrade(int execGradein);
 
 		void beSigned(Bureaucrat& officer);
 
@@ -34,8 +37,8 @@ class Form {
 		class GradeTooLowException: public std::exception{
 			public:
 				virtual const char* what() const throw();
-		}
+		};
 
 };
-
+std::ostream& operator<<(std::ostream& os, const Form& object);
 #endif

@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat(std::string namein, int gradein): name(namein) {
     }
     catch(std::exception& e){
         std::cout << e.what() << std::endl;
-        std::cout << "Lowest value which is 150 is set as default" << std::endl;
+        std::cout << "Lowest value which is 150 is set as default for Bureaucrat grade." << std::endl;
         this->grade = 150;
     }
 }
@@ -22,7 +22,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy): name(copy.name), grade(copy.grad
 }
 
 Bureaucrat::~Bureaucrat(){
-    std::cout << "Dectructor is called." << std::endl;
+    std::cout << "Bureaucrat Destructor is called." << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy){
@@ -70,4 +70,12 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& object){
     out << object.getName() << ", bureaucrat grade " << object.getGrade() << "." << std::endl;
     return out;
+}
+
+void Bureaucrat::signForm(Form& form){
+    if (form.getSignedForm() == false)
+        form.beSigned(*this);
+    else
+		std::cout << "This form" << form.getName() << " is already signed. Sorry "<< this->getName() << "." << std::endl;
+
 }
