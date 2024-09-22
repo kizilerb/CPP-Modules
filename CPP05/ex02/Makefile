@@ -1,7 +1,7 @@
 CC = c++ -std=c++98
 FLAG = -Wall -Wextra -Werror
-Name = ClapTrap
-SRC = main.cpp ClapTrap.cpp
+Name = Bureaucrat
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 all: $(Name)
 
