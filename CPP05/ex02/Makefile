@@ -1,7 +1,7 @@
 CC = c++ -std=c++98
 FLAG = -Wall -Wextra -Werror
-Name = Bureaucrat
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+Name = Forms
+SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 all: $(Name)
 

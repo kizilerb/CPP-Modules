@@ -3,13 +3,13 @@
 AForm::AForm(): formName("default"), execGrade(150) {
     signedForm = false;
     signGrade = 150;
-    std::cout<< "Default constructor is called." << std::endl;
+    std::cout<< "AForm Default constructor is called." << std::endl;
 }
 
 AForm::AForm(std::string namein, int signGradein, int execGradein): formName(namein), execGrade(this->setExecGrade(execGradein)) {
     this->setSignedGrade(signGradein);
     this->signedForm = false;
-    std::cout<< "Constructor is called." << std::endl;
+    std::cout<< "AForm Constructor is called." << std::endl;
 }
 
 AForm & AForm::operator=(const AForm & copy){
@@ -57,7 +57,7 @@ void AForm::setSignedGrade(int signGradein){
         std::cout << "Lowest value which is 150 is set as default for signed grade of the AForm." << std::endl;
         this->signGrade = 150;
     }
-    
+
 }
 int AForm::setExecGrade(int execGrade){ //const value
 	try{

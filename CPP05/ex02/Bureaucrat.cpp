@@ -2,11 +2,11 @@
 
 Bureaucrat::Bureaucrat(): name("Default") {
     this->grade = 150;
-    std::cout<< "Default constructor is called." << std::endl;
+    std::cout<< "Bureaucrat Default constructor is called." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string namein, int gradein): name(namein) {
-    std::cout<< "Constructor is called." << std::endl;
+    std::cout<< "Bureaucrat Constructor is called." << std::endl;
     try{
         setGrade(gradein);
     }
@@ -54,9 +54,9 @@ void Bureaucrat::setGrade(int value){
         throw GradeTooLowException();
     else if(value < 1)
         throw GradeTooHighException();
-    else 
+    else
         this->grade = value;
-    
+
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw(){

@@ -35,7 +35,7 @@ void RobotomyRequestForm::execute(const Bureaucrat& execute) const{
 		throw AForm::GradeTooLowException();
 
 		std::srand(std::time(nullptr)); //seed
-		int random_number = rand() % 101;
+		int random_number = rand() % 100;
 		std::cout << "random number : " << random_number << std::endl;
 		if(random_number % 2 == 0)
 			std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;

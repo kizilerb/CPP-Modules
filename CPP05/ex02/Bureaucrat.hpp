@@ -4,7 +4,7 @@
 #include "AForm.hpp"
 #include <iostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat{
     private:
@@ -27,12 +27,12 @@ class Bureaucrat{
 		void setGrade(int value);
 
         class GradeTooHighException : public std::exception{
-            public: 
+            public:
                 virtual const char* what() const throw();
         };
 
         class GradeTooLowException: public std::exception{
-            public: 
+            public:
                 virtual const char* what() const throw();
         };
 
