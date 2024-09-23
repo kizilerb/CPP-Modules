@@ -1,7 +1,7 @@
 #include "Intern.hpp"
 
 Intern::Intern(){
-	cout << "Intern Default Constructor Called" << endl;
+	std::cout << "Intern Default Constructor Called" << std::endl;
 
 	formList["Robotomy Request"] = &createRobotomyRequestForm;
     formList["Presidential Pardon"] = &createPresidentialPardonForm;
@@ -10,32 +10,32 @@ Intern::Intern(){
 
 Intern::Intern(const Intern& copy){
 	(void)copy;
-	cout << "Intern Copy Constructor Called" << endl;
+	std::cout << "Intern Copy Constructor Called" << std::endl;
 }
 
 Intern& Intern::operator=(const Intern& copy){
 	(void)copy;
-	cout << "Intern Copy Assignment Operator Called" << endl;
+	std::cout << "Intern Copy Assignment Operator Called" << std::endl;
 	return *this;
 }
 
 Intern::~Intern(){
-	cout << "Intern Destructor Called" << endl;
+	std::cout << "Intern Destructor Called" << std::endl;
 }
 
-Form* Intern::createRobotomyRequestForm(const std::string& target) {
+AForm* Intern::createRobotomyRequestForm(const std::string& target) {
     return new RobotomyRequestForm(target);
 }
 
-Form* Intern::createPresidentialPardonForm(const std::string& target) {
+AForm* Intern::createPresidentialPardonForm(const std::string& target) {
     return new PresidentialPardonForm(target);
 }
 
-Form* Intern::createShrubberyCreationForm(const std::string& target) {
+AForm* Intern::createShrubberyCreationForm(const std::string& target) {
     return new ShrubberyCreationForm(target);
 }
 
-Form * Intern::makeForm(std::string name, std::string target ){
+AForm * Intern::makeForm(std::string name, std::string target ){
 	std::map<std::string, FormCreationFunction>::iterator it = formList.find(name);
 	if (it != formList.end()){
 		std::cout<< "Intern creates" << name<<std::endl;
