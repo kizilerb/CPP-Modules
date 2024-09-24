@@ -1,12 +1,13 @@
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
+#include <iostream>
 
 class ScalarConverter{
 	private:
-		double dValue;
 		char cValue;
-		float fValue;
 		int iValue;
+		float fValue;
+		double dValue;
 
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter& copy);
