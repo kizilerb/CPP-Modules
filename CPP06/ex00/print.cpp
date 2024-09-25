@@ -24,7 +24,13 @@ void ScalarConverter::resultPrintInt(bool anyInfinity){
 
 void ScalarConverter::resultPrintFloatDouble(std::string input, std::string type, bool anyInfinity){
     if(anyInfinity == false && (type == "FLOAT" || type == "DOUBLE")){
-        if(input[input.length() - 2] == '0' || input[input.length() - 2] == '.')
+        std::string pos = "";
+        std::string zeros = "";
+        if (input.find('.') + 1 != input.size() && input[input.find('.') + 1] != 'f'){
+            pos = input.substr(input.find('.') + 1, input.length());
+            zeros = std::string(pos.length() - 1, '0');
+        }
+        if(pos == "" || pos == zeros + "0" || pos == zeros + "f")
         {
             std::cout << "float : " << this->fValue << ".0f" << std::endl;
             std::cout << "double : " << this->dValue << ".0" << std::endl;
