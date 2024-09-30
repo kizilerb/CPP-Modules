@@ -66,13 +66,13 @@ void vectorExample(){
 int main()
 {
 	std::string next = "Y"; 
-	std::string exapmleQuery;
+	std::string exampleQuery;
 	while(next != "N"){
 		std::cout << "Example : 1-> Vector 2-> List" << std::endl;
-		std::cin >> exapmleQuery;
-		if(exapmleQuery == "1")
+		std::cin >> exampleQuery;
+		if(exampleQuery == "1")
 			vectorExample();
-		else if(exapmleQuery == "2")
+		else if(exampleQuery == "2")
 			listExample();
 		std::cout << "Again? Y->Yes N->No" << std::endl;
 		std::cin >> next;
