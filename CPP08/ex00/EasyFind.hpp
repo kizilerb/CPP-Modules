@@ -14,10 +14,7 @@ class ErrorMessage : public std::exception {
 template <typename T>
 typename T::iterator easyFind(T &findArray, int findValue){
 	typename T::iterator	it_ptr;
-	
-	for(it_ptr = findArray.begin() ; it_ptr != findArray.end() ; it_ptr++)
-		if(*it_ptr == findValue)
-			return it_ptr;
+	it_ptr = find(findArray.begin(), findArray.end(), findValue);
 	
 	if(it_ptr == findArray.end())
 		throw ErrorMessage();
