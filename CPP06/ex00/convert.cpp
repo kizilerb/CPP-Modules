@@ -13,23 +13,29 @@ std::string ScalarConverter::getType(const std::string input){
         else if (std::count(input.begin(), input.end(), '.') == 1 ){
 			if (input[input.length() - 1] == 'f' && std::count(input.begin(), input.end(), 'f') == 1){
 				type = "FLOAT";
-				if(ScalarConverter::anyLetter(input, type))
-					this->fValue = std::stof(input);
+				if(ScalarConverter::anyLetter(input, type)){
+					std::istringstream iss(input);
+					iss >> this->fValue;
+				}
 				else
 					throw InvalidArgument();
 			}
 			else {
 				type = "DOUBLE";
-				if(ScalarConverter::anyLetter(input, type))
-					this->dValue = std::stod(input);
+				if(ScalarConverter::anyLetter(input, type)){
+					std::istringstream iss(input);
+					iss >> this->dValue ;
+				}
 				else
 					throw InvalidArgument();
 			}
 		}
         else {
 			type = "INT";
-			if(ScalarConverter::anyLetter(input , type) == true)
-				this->iValue = std::stoi(input);
+			if(ScalarConverter::anyLetter(input , type) == true){
+				std::istringstream iss(input);
+				iss >> this->iValue;   
+			}
 			else
 				throw InvalidArgument();
 		}
@@ -70,21 +76,29 @@ void ScalarConverter::resultCasting(std::string input, std::string typeConvert, 
 		}
 		else if(typeConvert == "INT" && anyInfinity == false)
 		{
-			int convertInt = std::stoi(input);
+			int convertInt;
+			std::istringstream iss(input);
+			iss >> convertInt;
 			this->cValue = static_cast<char>(convertInt);
 			this->iValue = static_cast<int>(convertInt);
 			this->fValue = static_cast<float>(convertInt);
 			this->dValue = static_cast<double>(convertInt);
 		}
 		else if(typeConvert == "FLOAT" && anyInfinity == false){
-			float convertFloat = std::stof(input);
+			std::string result = input;
+			float convertFloat;
+			result.resize(input.size() - 1);
+			std::istringstream iss(result);
+			iss >> convertFloat;
 			this->cValue = static_cast<char>(convertFloat);
 			this->iValue = static_cast<int>(convertFloat);
 			this->fValue = static_cast<float>(convertFloat);
 			this->dValue = static_cast<double>(convertFloat);
 		}
 		else if(typeConvert == "DOUBLE" && anyInfinity == false){
-			double convertDouble = std::stod(input);
+			double convertDouble;
+			std::istringstream iss(input);
+			iss >> convertDouble;
 			this->cValue = static_cast<char>(convertDouble);
 			this->iValue = static_cast<int>(convertDouble);
 			this->fValue = static_cast<float>(convertDouble);
