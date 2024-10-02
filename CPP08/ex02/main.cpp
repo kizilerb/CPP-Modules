@@ -1,4 +1,5 @@
 #include "MutantStack.hpp"
+#include <sstream>
 
 void defaultExample()
 {
@@ -71,7 +72,10 @@ int main()
 		std::cout << "Example : 1-> Default(Deque) 2-> Vector 3-> List" << std::endl;
         std::cout << "Which one do you want? = ";
 		std::cin >> exampleQuery;
-        switch (std::stoi(exampleQuery))
+        std::istringstream iss(exampleQuery);
+        int examp;
+        iss >>examp;
+        switch (examp)
         {
             case 1:
                 defaultExample();
