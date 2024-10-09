@@ -30,7 +30,7 @@ std::string ShrubberyCreationForm::getTarget()const{
 
 void ShrubberyCreationForm::execute(const Bureaucrat& execute) const{
     if(this->getSignedForm() == true)
-        throw AForm::SignedFormExeption();
+        throw AForm::SignedFormException();
     if(this->getExecGrade() < execute.getGrade())
         throw AForm::GradeTooLowException();
 

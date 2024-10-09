@@ -30,7 +30,7 @@ std::string PresidentialPardonForm::getTarget()const{
 
 void PresidentialPardonForm::execute(const Bureaucrat& execute) const{
 	if(this->getSignedForm() == true)
-		throw AForm::SignedFormExeption();
+		throw AForm::SignedFormException();
 	if(this->getExecGrade() < execute.getGrade())
 		throw AForm::GradeTooLowException();
 	std::cout << this->getTarget() << " Forgiven by Zaphod Beeblebrox." << std::endl;

@@ -3,14 +3,14 @@
 
 int main()
 {
-	Bureaucrat	Thor("Thor", 1);
+	Bureaucrat	Poseidon("Poseidon", 1);
 	Intern intern;
 	AForm *formPTR;
 
 
-	formPTR =  intern.makeForm("Robotomy Request", "EFE");
+	formPTR =  intern.makeForm("Robotomy Request", "Alp");
 	if(formPTR)
-		Thor.executeForm(*formPTR);
+		Poseidon.executeForm(*formPTR);
 	else {
 		std::cout << "Not Created Form." << std::endl;
 		exit(1);
