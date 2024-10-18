@@ -7,7 +7,7 @@ template <typename T>
 class Array{
 	private:
 		T *array;
-		unsigned int lenght;
+		unsigned int length;
 	public:
 		Array();
 		Array(unsigned int n);
@@ -19,26 +19,26 @@ class Array{
 };
 
 template <typename T>
-Array<T>::Array() : lenght(1){
+Array<T>::Array() : length(1){
     this->array = new T();
 }
 
 template <typename T>
-Array<T>::Array(unsigned int n): lenght(n) {
+Array<T>::Array(unsigned int n): length(n) {
     if (n > 0)
         this->array = new T[n]();
     else {
         std::cout << "Created Empty Array" << std::endl;
         this->array = new T();
-        this->lenght = 1;
+        this->length = 1;
     }
 }
 
 template <typename T>
 Array<T>::Array(const Array<T>& copy){
-    this->lenght = copy.lenght;
-    this->array = new T[this->lenght];
-    for(unsigned int i = 0; i < lenght ; i++)
+    this->length = copy.length;
+    this->array = new T[this->length];
+    for(unsigned int i = 0; i < length ; i++)
         this->array[i] = copy.array[i];
 }
 
@@ -48,9 +48,9 @@ Array<T> &Array<T>::operator=(const Array<T> &copy) {
         return *this;
 	if (this->array)
 		delete [] this->array;
-	this-> lenght = copy.lenght;
-	this->array = new T[this->lenght];
-	for (unsigned int i = 0; i < this->lenght; i++)
+	this-> length = copy.length;
+	this->array = new T[this->length];
+	for (unsigned int i = 0; i < this->length; i++)
 		this->array[i] = copy.array[i];
 	return (*this);
 }
@@ -65,12 +65,12 @@ T& Array<T>::operator[](unsigned int index){
 
 template<typename T>
 Array<T>::~Array() {
-	if (lenght != 0)
+	if (length != 0)
 		delete [] this->array;
 }
 
 template <typename T>
 unsigned int Array<T>::size() const{
-    return this->lenght;
+    return this->length;
 }
 #endif
