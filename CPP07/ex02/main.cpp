@@ -1,6 +1,5 @@
 #include "Array.hpp"
-#include <unistd.h>
-#include "Array.hpp"
+
 #define MAX_VAL 5
 
 int main(int, char**)
@@ -16,13 +15,14 @@ int main(int, char**)
 	}
 	//SCOPE
 	{
-	 	Array<int> numbers(MAX_VAL);
-		for (int i = 0; i < MAX_VAL; i++){
+	 	Array<int> numbers(100);
+		for (int i = 0; i < 100; i++){
 			const int value = rand();
 			numbers[i] = value;
 		}
 		Array<int> tmp;
 		tmp = numbers;
+		std::cout<< "size of numbers: "<< numbers.size() << ", size of tmp: "<< tmp.size() << std::endl;
 	}
 
 	for (int i = 0; i < MAX_VAL; i++)
@@ -54,6 +54,6 @@ int main(int, char**)
 	{
 		numbers[i] = rand();
 	}
-	delete [] mirror;//
+	delete [] mirror;
 	return 0;
 }

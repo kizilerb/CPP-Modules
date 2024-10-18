@@ -1,7 +1,7 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 #include <iostream>
-#include <unistd.h>
+#include <cstdlib>
 
 template <typename T>
 class Array{

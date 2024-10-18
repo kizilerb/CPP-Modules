@@ -34,7 +34,7 @@ std::string ScalarConverter::getType(const std::string input){
 			type = "INT";
 			if(ScalarConverter::anyLetter(input , type) == true){
 				std::istringstream iss(input);
-				iss >> this->iValue;   
+				iss >> this->iValue;
 			}
 			else
 				throw InvalidArgument();
@@ -63,7 +63,7 @@ bool ScalarConverter::anyLetter(std::string input, std::string type){
 			return false;
 	}
 	return true;
-} 
+}
 
 void ScalarConverter::resultCasting(std::string input, std::string typeConvert, bool anyInfinity){
     try{
@@ -115,7 +115,7 @@ void ScalarConverter::convert(const std::string input){
 	ScalarConverter a;
 	bool anyInfinity = false;
 	std::string convertType = a.getType(input);
-	
+
 	if(convertType == "infinity")
 		anyInfinity = true;
 	if(convertType == "empty")
@@ -125,7 +125,7 @@ void ScalarConverter::convert(const std::string input){
 	else if (convertType == "Out Of Range")
 		std::cout << "Error : ./convert [İnput out of range.]" << std::endl;
 	else {
-		std::cout << "Convert Type : " << convertType << std::endl; 
+		std::cout << "Convert Type : " << convertType << std::endl;
 		a.resultCasting(input, convertType, anyInfinity);
 		a.resultPrintChar(anyInfinity);
 		a.resultPrintInt(anyInfinity);

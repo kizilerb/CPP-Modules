@@ -89,7 +89,7 @@ void Bureaucrat::executeForm(AForm const & form){
 		std::cout << e.what() << std::endl;
 		std::cout << this->getName() << " is exec grade too low.." << std::endl;
 	}
-	catch (const AForm::SignedFormExeption &e){
+	catch (const AForm::SignedFormException &e){
 		std::cout << e.what() << std::endl;
 		std::cout << this->getName() << " couldn't sign this form"<< form.getName()<< "because it had already been signed." << std::endl;
 	}

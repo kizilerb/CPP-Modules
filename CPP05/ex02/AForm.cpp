@@ -83,7 +83,7 @@ const char* AForm::GradeTooLowException::what() const throw(){
     return ("Grade is too low, out of interval.");
 }
 
-const char * AForm::SignedFormExeption::what() const throw(){
+const char * AForm::SignedFormException::what() const throw(){
 	return "This form is already signed.";
 }
 

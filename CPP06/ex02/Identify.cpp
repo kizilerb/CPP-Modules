@@ -8,7 +8,7 @@ Base* generate(){
     std::cout << "Random number [0: A , 1: B, 2: C] : " << random_number << std::endl;
     switch (random_number){
         case 0:
-            return (new A);
+            return (new A());
         case 1:
             return (new B());
         case 2:
