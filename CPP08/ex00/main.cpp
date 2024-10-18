@@ -3,17 +3,17 @@
 #include <list>
 
 void listExample(){
-	std::list<int> test;	
+	std::list<int> test;
 	std::list<int>::iterator it;
-	
+
 	test.push_back(16);
 	test.push_back(57);
 	test.push_back(5);
-	
+
 	try
 	{
 		it = ::easyFind(test, 16);
-		std::cout << "Value found at index " << std::distance(test.begin(), it) << '\n';
+		std::cout << "Value is " << *it <<", found at index " << std::distance(test.begin(), it) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -23,7 +23,7 @@ void listExample(){
 	try
 	{
 		it = ::easyFind(test, 15);
-		std::cout << "Value found at index " << std::distance(test.begin(), it) << '\n';
+		std::cout << "Value is " << *it <<", found at index " << std::distance(test.begin(), it) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -35,7 +35,7 @@ void listExample(){
 void vectorExample(){
 	std::vector<int> test2 (4, 10);
 	std::vector<int>::iterator it_2;
-	
+
 	test2.push_back(123);
 	test2.push_back(9);
 	test2.push_back(8);
@@ -45,7 +45,7 @@ void vectorExample(){
 	try
 	{
 		it_2 = ::easyFind(test2, 222);
-		std::cout << "Value found at index " << std::distance(test2.begin(), it_2) << '\n';
+		std::cout << "Value is " << *it_2 <<", found at index " << std::distance(test2.begin(), it_2) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -55,7 +55,7 @@ void vectorExample(){
 	try
 	{
 		it_2 = ::easyFind(test2, 0);
-		std::cout << "Value found at index " << std::distance(test2.begin(), it_2) << '\n';
+		std::cout << "Value is " << *it_2 <<", found at index " << std::distance(test2.begin(), it_2) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -65,7 +65,7 @@ void vectorExample(){
 
 int main()
 {
-	std::string next = "Y"; 
+	std::string next = "Y";
 	std::string exampleQuery;
 	while(next != "N"){
 		std::cout << "Example : 1-> Vector 2-> List" << std::endl;
@@ -77,7 +77,5 @@ int main()
 		std::cout << "Again? Y->Yes N->No" << std::endl;
 		std::cin >> next;
 	}
-	
-	
 	return (0);
 }
