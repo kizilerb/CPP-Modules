@@ -48,7 +48,7 @@ void Span::printSpan(){
             this->spanSet.insert(value);
     }catch (std::exception &e){
         std::cerr << e.what() << std::endl;
-    } 
+    }
  }
 
 int Span::longestSpan(){

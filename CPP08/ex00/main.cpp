@@ -33,7 +33,7 @@ void listExample(){
 }
 
 void vectorExample(){
-	std::vector<int> test2 (4, 10);
+	std::vector<int> test2(4, 10);
 	std::vector<int>::iterator it_2;
 
 	test2.push_back(123);

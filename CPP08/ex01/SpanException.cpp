@@ -1,7 +1,7 @@
 #include "Span.hpp"
 
 const char* Span::ArrayCapacityFull::what() const throw(){
-	return "No more can be added as the capacity is full.";
+	return "No more number can be added because the capacity is full.";
 }
 
 const char* Span::ValueisAvailable::what() const throw(){
@@ -9,5 +9,5 @@ const char* Span::ValueisAvailable::what() const throw(){
 }
 
 const char* Span::NotEnough::what() const throw(){
-	return "Not Enough Value in Number List";
+	return "There are not enough numbers in the number list for comparison.";
 }
