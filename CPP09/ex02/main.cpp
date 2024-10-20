@@ -18,16 +18,16 @@ int main(int ac, char** arg){
 		}
 		std::cout << std::endl;
 		std::clock_t start = std::clock();
-		if(listInValueTemplate(dequeShort, arg)){
-			mergeShortTemplate(dequeShort, dequeShort.begin(), dequeShort.end());
+		if(listInValueDeque(dequeShort, arg)){
+			mergeShortDeque(dequeShort, dequeShort.begin(), dequeShort.end());
 			std::clock_t end = std::clock();
 			progressTimeDeque = static_cast<float>(end - start) / (float)CLOCKS_PER_SEC * 10000;
 		}
 		else
 			return 1;
 		start = std::clock();
-		if(listInValueTemplate(listShort ,arg)){
-			mergeShortTemplate(listShort, listShort.begin(), listShort.end());
+		if(listInValueList(listShort ,arg)){
+			mergeShortList(listShort, listShort.begin(), listShort.end());
 			std::clock_t end = std::clock();
 			progressTimeList = static_cast<float>(end - start) / (float)CLOCKS_PER_SEC * 10000;
 		}
@@ -35,7 +35,7 @@ int main(int ac, char** arg){
 			return 1;
 
 		std::cout << "After  : ";
-		printTemplate(listShort.begin(), listShort.end());
+		printList(listShort.begin(), listShort.end());
 		std::cout << "Time to process a range of " << listShort.size() << " elements with std:list<int> : " << progressTimeList << " us." << std::endl;
 		std::cout << "Time to process a range of " << dequeShort.size() << " elements with std:deque<int> : " << progressTimeDeque << " us." << std::endl;
 	}
