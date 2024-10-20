@@ -1,6 +1,6 @@
 CC = c++ -std=c++98
 FLAG = -Wall -Wextra -Werror
-Name = btc
+Name = RPN
 SRC = main.cpp RPN.cpp
 
 all: $(Name)
