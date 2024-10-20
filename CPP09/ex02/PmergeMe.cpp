@@ -16,7 +16,7 @@ bool anyLetter(std::string input){
 
 //DEQUE FUNCTIONS
 
-bool listInValueDeque(std::deque<int> &list, char **argList){
+bool getValueDeque(std::deque<int> &list, char **argList){
 	int value = 0;
 	try{
 		for(size_t i = 0; argList[i] != 0; i++ ){
@@ -31,6 +31,26 @@ bool listInValueDeque(std::deque<int> &list, char **argList){
         return false;
     }
 	return true;
+}
+
+void mergeShortDeque(std::deque<int> &list, std::deque<int>::iterator left, std::deque<int>::iterator right){
+	if (std::distance(left, right) <= 1)
+        return;
+
+    if (std::distance(left, right) < 10) {
+        insertionSortDeque(left, right);
+        return;
+    }
+
+	std::deque<int>::iterator mid = std::next(left, std::distance(left, right) / 2);
+	mergeShortDeque(list, left, mid);
+	mergeShortDeque(list, mid, right);
+
+	std::deque<int> leftMerge(left,mid);
+	std::deque<int> rightMerge(mid, right);
+	std::deque<int> sorted = mergeDeque(leftMerge, rightMerge);
+
+	std::copy(sorted.begin(), sorted.end(), left);
 }
 
 void insertionSortDeque(std::deque<int>::iterator left, std::deque<int>::iterator right) {
@@ -72,26 +92,6 @@ std::deque<int> mergeDeque(std::deque<int> &left, std::deque<int> &right){
         ++itRight;
     }
 	return mergeSorted;
-}
-
-void mergeShortDeque(std::deque<int> &list, std::deque<int>::iterator left, std::deque<int>::iterator right){
-	 if (std::distance(left, right) <= 1)
-        return;
-
-    if (std::distance(left, right) < 10) {
-        insertionSortDeque(left, right);
-        return;
-    }
-
-	std::deque<int>::iterator mid = std::next(left, std::distance(left, right) / 2);
-	mergeShortDeque(list, left, mid);
-	mergeShortDeque(list, mid, right);
-
-	std::deque<int> leftMerge(left,mid);
-	std::deque<int> rightMerge(mid, right);
-	std::deque<int> sorted = mergeDeque(leftMerge, rightMerge);
-
-	std::copy(sorted.begin(), sorted.end(), left);
 }
 
 void printDeque(std::deque<int>::iterator left, std::deque<int>::iterator right){
@@ -145,7 +145,7 @@ std::list<int> mergeList(std::list<int> &left, std::list<int> &right){
 	return mergeSorted;
 }
 
-bool listInValueList(std::list<int> &list, char **argList){
+bool getValueList(std::list<int> &list, char **argList){
 	int value = 0;
 	try{
 		for(size_t i = 0; argList[i] != 0; i++ ){

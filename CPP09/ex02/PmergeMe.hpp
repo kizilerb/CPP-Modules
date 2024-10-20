@@ -8,8 +8,8 @@
 #include <algorithm>
 #include <sstream>
 
-bool			listInValueList(std::list<int> &list, char **argList);
-bool			listInValueDeque(std::deque<int> &list, char **argList);
+bool			getValueList(std::list<int> &list, char **argList);
+bool			getValueDeque(std::deque<int> &list, char **argList);
 void			printList(std::list<int>::iterator left, std::list<int>::iterator right);
 void			printDeque(std::deque<int>::iterator left, std::deque<int>::iterator right);
 

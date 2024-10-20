@@ -9,16 +9,16 @@ int main(int ac, char** arg){
 	else{
 		std::list<int> listShort;
 		std::deque<int> dequeShort;
-		arg++;
 		float progressTimeList, progressTimeDeque;
 
+		arg++;
 		std::cout << "Before : ";
 		for(int i = 0; arg[i] != 0; i++){
 			std::cout << arg[i] << " ";
 		}
 		std::cout << std::endl;
 		std::clock_t start = std::clock();
-		if(listInValueDeque(dequeShort, arg)){
+		if(getValueDeque(dequeShort, arg)){
 			mergeShortDeque(dequeShort, dequeShort.begin(), dequeShort.end());
 			std::clock_t end = std::clock();
 			progressTimeDeque = static_cast<float>(end - start) / (float)CLOCKS_PER_SEC * 10000;
@@ -26,7 +26,7 @@ int main(int ac, char** arg){
 		else
 			return 1;
 		start = std::clock();
-		if(listInValueList(listShort ,arg)){
+		if(getValueList(listShort ,arg)){
 			mergeShortList(listShort, listShort.begin(), listShort.end());
 			std::clock_t end = std::clock();
 			progressTimeList = static_cast<float>(end - start) / (float)CLOCKS_PER_SEC * 10000;
