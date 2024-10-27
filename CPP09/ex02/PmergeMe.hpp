@@ -16,11 +16,11 @@ void			printDeque(std::deque<int>::iterator left, std::deque<int>::iterator righ
 //list
 void			insertionSortList(std::list<int>::iterator left, std::list<int>::iterator right);
 std::list<int>	mergeList(std::list<int> &left, std::list<int> &right);
-void 			mergeShortList(std::list<int> &list, std::list<int>::iterator left, std::list<int>::iterator right);
+void 			mergeSortList(std::list<int> &list, std::list<int>::iterator left, std::list<int>::iterator right);
 
 void			insertionSortDeque(std::deque<int>::iterator left, std::deque<int>::iterator right);
 std::deque<int>	mergeDeque(std::deque<int> &left, std::deque<int> &right);
-void 			mergeShortDeque(std::deque<int> &list, std::deque<int>::iterator left, std::deque<int>::iterator right);
+void 			mergeSortDeque(std::deque<int> &list, std::deque<int>::iterator left, std::deque<int>::iterator right);
 
 class InvalidArgument : public std::exception {
 	public:

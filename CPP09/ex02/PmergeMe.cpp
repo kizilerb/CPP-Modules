@@ -33,7 +33,7 @@ bool getValueDeque(std::deque<int> &list, char **argList){
 	return true;
 }
 
-void mergeShortDeque(std::deque<int> &list, std::deque<int>::iterator left, std::deque<int>::iterator right){
+void mergeSortDeque(std::deque<int> &list, std::deque<int>::iterator left, std::deque<int>::iterator right){
 	if (std::distance(left, right) <= 1)
         return;
 
@@ -43,8 +43,8 @@ void mergeShortDeque(std::deque<int> &list, std::deque<int>::iterator left, std:
     }
 
 	std::deque<int>::iterator mid = std::next(left, std::distance(left, right) / 2);
-	mergeShortDeque(list, left, mid);
-	mergeShortDeque(list, mid, right);
+	mergeSortDeque(list, left, mid);
+	mergeSortDeque(list, mid, right);
 
 	std::deque<int> leftMerge(left,mid);
 	std::deque<int> rightMerge(mid, right);
@@ -162,7 +162,7 @@ bool getValueList(std::list<int> &list, char **argList){
 	return true;
 }
 
-void mergeShortList(std::list<int> &list, std::list<int>::iterator left, std::list<int>::iterator right){
+void mergeSortList(std::list<int> &list, std::list<int>::iterator left, std::list<int>::iterator right){
 	 if (std::distance(left, right) <= 1)
         return;
 
@@ -172,8 +172,8 @@ void mergeShortList(std::list<int> &list, std::list<int>::iterator left, std::li
     }
 
 	std::list<int>::iterator mid = std::next(left, std::distance(left, right) / 2);
-	mergeShortList(list, left, mid);
-	mergeShortList(list, mid, right);
+	mergeSortList(list, left, mid);
+	mergeSortList(list, mid, right);
 
 	std::list<int> leftMerge(left,mid);
 	std::list<int> rightMerge(mid, right);
