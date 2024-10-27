@@ -53,7 +53,9 @@ void BitcoinExchange::startPrint(){
 			continue;
 		}
 		else if(it->second < 0 || it->second > 1000){
-			if(it->second < 0)
+            if(it->second == -1001)
+				std::cerr << "Error: not a valid price." << std::endl;
+			else if(it->second < 0)
 				std::cerr << "Error: not a positive number." << std::endl;
 			else if (it->second > 1000)
 				std::cerr << "Error: too large a number." << std::endl;
