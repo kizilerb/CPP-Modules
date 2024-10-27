@@ -48,8 +48,6 @@ bool anyLetter(std::string str){
 			return false;
 		else if (str.find('.') && (str[i] != '.' && !std::isdigit(str[i])))
 			return false;
-		else if(str[i] == '.' && !std::isdigit(str[i - 1]))
-			return false;
 	}
 	return true;
 }
@@ -80,12 +78,10 @@ void BitcoinExchange::readDB(std::string findString){
 			continue;
 		date = line.substr(0, pos);
 		tempPrice = line.substr(pos + 1);
-		if(tempPrice[tempPrice.length() - 1] == 'f')
-			tempPrice = tempPrice.substr(0,tempPrice.length() - 1);
-		std::istringstream iss(tempPrice);
-		iss >> price;
 		if(!anyLetter(tempPrice))
 			price = -1001;
+		else
+			price = std::strtod(tempPrice.c_str(), nullptr);
 		if(findString == ",")
 			this->btcDB.insert(btcDB.begin() , std::pair<std::string, double>(date, price));
 		else{
