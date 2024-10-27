@@ -35,14 +35,20 @@ bool BitcoinExchange::getEmptyFile(){
 }
 
 bool anyLetter(std::string str){
+	if (std::count(str.begin(), str.end(), 'f') > 1 || std::count(str.begin(), str.end(), '.') > 1)
+		return false;
     for (size_t i = 0; i < str.size(); ++i) {
 		if(i == 0 && (str[i] == ' '))
 			i++;
 		if(i == 1 && (str[i] == '+' || str[i] == '-'))
 			i++;
-		if(!str.find('.') && !std::isdigit(str[i]))
+		if (str.length() - 1 == i && str[i] == 'f' && std::isdigit(str[i - 1]))
+			continue;
+		else if(!str.find('.') && !std::isdigit(str[i]))
 			return false;
 		else if (str.find('.') && (str[i] != '.' && !std::isdigit(str[i])))
+			return false;
+		else if(str[i] == '.' && !std::isdigit(str[i - 1]))
 			return false;
 	}
 	return true;
@@ -61,6 +67,9 @@ void BitcoinExchange::readDB(std::string findString){
 	int 		pos;
 	double 		price;
 	std::getline(readFile, line);
+	if(findString == "|" && line != std::string("date | value")){
+		std::cerr << " Error: input file first line is wrong, format: date | value" << std::endl;
+	}
 	while(std::getline(readFile, line)){
 		pos = line.find(findString);
 		if(findString == "|" && pos == -1){
@@ -71,7 +80,9 @@ void BitcoinExchange::readDB(std::string findString){
 			continue;
 		date = line.substr(0, pos);
 		tempPrice = line.substr(pos + 1);
-		std::istringstream iss(tempPrice); // price isdigit
+		if(tempPrice[tempPrice.length() - 1] == 'f')
+			tempPrice = tempPrice.substr(0,tempPrice.length() - 1);
+		std::istringstream iss(tempPrice);
 		iss >> price;
 		if(!anyLetter(tempPrice))
 			price = -1001;

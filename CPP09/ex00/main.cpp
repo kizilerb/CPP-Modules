@@ -11,7 +11,7 @@ int main(int ac, char *argv[]){
 		btc.readDB("|");
 		std::cout << "----------------------------------------------------------------" << std::endl;
 		if(btc.getEmptyFile()){
-			std::cerr << "Input file is empty." << std::endl;
+			std::cerr << "Error: There is no data to read." << std::endl;
 		}
 		btc.startPrint();
 		std::cout << "----------------------------------------------------------------" << std::endl;
