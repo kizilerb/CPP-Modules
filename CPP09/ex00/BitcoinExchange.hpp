@@ -19,7 +19,8 @@ class BitcoinExchange{
 		BitcoinExchange(const BitcoinExchange& copy);
 		BitcoinExchange& operator=(const BitcoinExchange& copy);
 		~BitcoinExchange();
-
+		bool getEmptyFile();
+		
 		void readDB(std::string findString);
 		void startPrint();
 };

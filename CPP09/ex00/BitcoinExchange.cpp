@@ -29,3 +29,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& copy){
 BitcoinExchange::~BitcoinExchange(){
 	std::cout << "Destructor is called" << std::endl;
 }
+
+bool BitcoinExchange::getEmptyFile(){
+	return this->emptyFile;
+}

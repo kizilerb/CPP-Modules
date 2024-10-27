@@ -38,10 +38,8 @@ void BitcoinExchange::readDB(std::string findString){
 		tempPrice = line.substr(pos + 1);
 		std::istringstream iss(tempPrice); // price isdigit
 		iss >> price;
-		if(!anyLetter(tempPrice)){
-			std::cout<<"----"<< tempPrice <<"------"<<std::endl;
+		if(!anyLetter(tempPrice))
 			price = -1001;
-		}
 		if(findString == ",")
 			this->btcDB.insert(btcDB.begin() , std::pair<std::string, double>(date, price));
 		else{

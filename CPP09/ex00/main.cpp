@@ -10,6 +10,9 @@ int main(int ac, char *argv[]){
 		btc.readDB(",");
 		btc.readDB("|");
 		std::cout << "----------------------------------------------------------------" << std::endl;
+		if(btc.getEmptyFile()){
+			std::cerr << "Input file is empty." << std::endl;
+		}
 		btc.startPrint();
 		std::cout << "----------------------------------------------------------------" << std::endl;
 		return 0;
